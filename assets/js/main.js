@@ -339,3 +339,30 @@
 						});
 
 })(jQuery);
+function sendMail() {
+    var params = {
+        userName: document.getElementById("userName").value,
+        userEmail: document.getElementById("userEmail").value,
+        userSubject: document.getElementById("userSubject").value,
+        userMessage: document.getElementById("userMessage").value,
+    };
+
+    // Check if any required field is empty
+    if (!params.userName || !params.userEmail || !params.userSubject || !params.userMessage) {
+        alert("Please fill in all required fields.");
+        // return; // Prevent sending the email
+    }
+
+    const serviceID = "service_mkg7nbm";
+    const templateID = "template_2iyy4hn";
+
+    emailjs.send(serviceID, templateID, params).then(
+        res => {
+            document.getElementById("userName").value = "";
+            document.getElementById("userEmail").value = "";
+            document.getElementById("userSubject").value = "";
+            document.getElementById("userMessage").value = "";
+            console.log(res);
+            alert("Your message was sent successfully!");
+        }).catch((err) => console.log(err));
+};
