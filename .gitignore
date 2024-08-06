@@ -1,3 +1,16 @@
 *.env
-img/
-images/
+# img/
+# images/
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
+# *.bmp
+# *.tiff
+# *.tif
+# *.svg
+# *.ico
+# *.webp
+# *.psd
+# *.ai
+# *.eps
