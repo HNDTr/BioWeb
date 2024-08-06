@@ -339,7 +339,9 @@
 						});
 
 })(jQuery);
-function sendMail() {
+function sendMail(event) {
+	event.preventDefault(); // Prevent the default form submission
+
     var params = {
         userName: document.getElementById("userName").value,
         userEmail: document.getElementById("userEmail").value,
@@ -350,19 +352,23 @@ function sendMail() {
     // Check if any required field is empty
     if (!params.userName || !params.userEmail || !params.userSubject || !params.userMessage) {
         alert("Please fill in all required fields.");
-        // return; // Prevent sending the email
+        return; // Prevent sending the email
     }
 
     const serviceID = "service_mkg7nbm";
     const templateID = "template_2iyy4hn";
 
-    emailjs.send(serviceID, templateID, params).then(
-        res => {
-            document.getElementById("userName").value = "";
-            document.getElementById("userEmail").value = "";
-            document.getElementById("userSubject").value = "";
-            document.getElementById("userMessage").value = "";
-            console.log(res);
-            alert("Your message was sent successfully!");
-        }).catch((err) => console.log(err));
+    emailjs.send(serviceID, templateID, params)
+		.then(function(res) {
+			document.getElementById("userName").value = "";
+			document.getElementById("userEmail").value = "";
+			document.getElementById("userSubject").value = "";
+			document.getElementById("userMessage").value = "";
+			console.log(res);
+			alert("Your message was sent successfully!");
+		})
+		.catch(function(err) {
+			console.error("Failed to send the email:", err);
+			alert("There was an error sending your message. Please try again later.");
+		});
 };

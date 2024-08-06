@@ -12,14 +12,12 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
 		<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
-		<script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-		</script>
-			<script type="text/javascript">
-			(function(){
-				emailjs.init("ceVhKzBZEyJZEinPN"); /*My PUBLIC KEY*/
-			})();
-		</script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+		<script type="text/javascript">
+		(function(){
+			emailjs.init("ceVhKzBZEyJZEinPN"); /*My PUBLIC KEY*/
+		})();
+    </script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -43,7 +41,7 @@
 							</ul>
 						</div>
 						<div class="image">
-							<img src="img/IMG_1510-3.jpeg" alt="" />
+							<img src="images/home.jpeg" alt="" />
 						</div>
 					</section>
 
@@ -63,7 +61,7 @@
 
 										</div>
 										<div class="image">
-											<img src="img/IMG_4622.jpeg" alt="" />
+											<img src="images/about.jpeg" alt="" />
 										</div>
 									
 									</section>
@@ -87,7 +85,7 @@
 							</ul>
 						</div>
 						<div class="image">
-							<img src="img/pexels-goumbik-574070.jpg" alt="" />
+							<img src="images/code.jpg" alt="" />
 						</div>
 					</section>
 
@@ -101,7 +99,7 @@
 							</ul>
 						</div>
 						<div class="image">
-							<img src="img/pexels-pixabay-274973.jpg" alt="" />
+							<img src="images/photo.jpg" alt="" />
 						</div>
 					</section>
 
@@ -115,7 +113,7 @@
 							</ul>
 						</div>
 						<div class="image">
-							<img src="img/pexels-padrinan-194094.jpg" alt="" />
+							<img src="images/leader.jpg" alt="" />
 						</div>
 					</section>
 
@@ -129,7 +127,7 @@
 							</ul>
 						</div>
 						<div class="image">
-							<img src="img/pexels-steve-1047540.jpg" alt="" />
+							<img src="images/art.jpg" alt="" />
 						</div>
 					</section>
 
@@ -206,7 +204,7 @@
 					<section class="wrapper style1 align-center">
 						<div class="inner medium">
 							<h2>Get in touch</h2>
-							<form >
+							<form id="contact-form" onsubmit="sendMail(event)">
 								<div class="fields">
 									<div class="field half">
 										<label for="name">Name</label>
@@ -218,7 +216,7 @@
 									</div>
 									<div class="field">
 										<label for="subject">Subject</label>
-										<input type="text" name="subject" id="userSubject" value="" />
+										<input type="text" name="subject" id="userSubject" value="" required/>
 									</div>
 									<div class="field">
 										<label for="message">Message</label>
@@ -226,7 +224,7 @@
 									</div>
 								</div>
 								<ul class="actions special">
-									<li><input type="submit" name="submit" id="submit" value="Send Message" onclick="sendMail()"/></li>
+									<li><input type="submit" name="submit" id="submit" value="Send Message"/></li>
 								</ul>
 							</form>
 
@@ -239,7 +237,7 @@
 							<ul class="icons">
 								<li><a href="https://github.com/HNDTr" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
 								<li><a href="https://www.linkedin.com/in/hndt/" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+								<li><a href=mailto:"huytrn35@gmail.com" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
 							</ul>
 							<p>&copy; 2024 Huy Tran. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 						</div>
